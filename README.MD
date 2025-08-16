@@ -9,6 +9,11 @@ Automated and customizable script for installing and configuring ComfyUI on Wind
 - Windows 10/11
 - Internet connection
 
+## ⚙️ How to run
+
+[**Download OneRunComfyUI (.exe)**](https://github.com/randomname124290358349/OneRunComfyUI/releases/download/auto-v20250816-001752/OneRunComfyUI.exe)  
+After downloading, simply run the file to start the application.
+
 ## 🚀 Installation and Usage
 
 ### 1. Install uv
