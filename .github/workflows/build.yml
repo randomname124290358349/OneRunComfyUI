@@ -1,0 +1,42 @@
+name: Build Windows Executable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+
+    - name: Build with PyInstaller
+      run: |
+        pyinstaller --name=OneRunComfyUI --onefile OneRunComfyUI.py
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: OneRunComfyUI
+        path: dist/OneRunComfyUI.exe
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/OneRunComfyUI.exe
+        draft: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
