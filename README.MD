@@ -2,6 +2,8 @@
 
 Automated and customizable script for installing and configuring ComfyUI on Windows with custom nodes and models.
 
+![demo](assets/demo.gif)
+
 ## 📋 Requirements
 
 - Windows 10/11
