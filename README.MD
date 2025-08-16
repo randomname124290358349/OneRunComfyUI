@@ -74,7 +74,7 @@ models = [
     {
         "url": "https://huggingface.co/model/resolve/main/file.safetensors",
         "filename": "filename.safetensors",
-        "directory": checkpoints_dir  # or upscale_dir
+        "directory": "checkpoints_dir"  # or upscale_dir
     },
     # Add more models here
 ]
